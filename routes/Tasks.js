@@ -15,6 +15,8 @@ router.post('/getImage',function(req,res,next)){
         res.json(rows);
       }
     }
+  }else{
+    res.send('Cannot POST');
   }
 }
 
