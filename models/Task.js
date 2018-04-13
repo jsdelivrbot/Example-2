@@ -24,8 +24,8 @@ updateTask:function(id,Task,callback){
   return db.query("update task set Title=?,Status=? where Id=?",[Task.title,Task.status,id],callback);
 },
  
-getAllImages:function(callback){
-	return db.query("select * from image",callback);
+getAllImages:function(page,callback){
+	return db.query("select * from image limit 3 offset ?*3",[page],callback);
 }
 };
 module.exports=Task;
