@@ -22,7 +22,10 @@ deleteTask:function(id,callback){
 
 updateTask:function(id,Task,callback){
   return db.query("update task set Title=?,Status=? where Id=?",[Task.title,Task.status,id],callback);
-}
+},
  
+getAllImages:function(callback){
+	return db.query("select * from image",callback);
+}
 };
 module.exports=Task;

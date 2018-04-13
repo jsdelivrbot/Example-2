@@ -6,6 +6,16 @@ router.post('/',function(req,res,next){
   res.send('Cannot POST');
 });
 
+router.get('/getImage',function(req,res,next)){
+  Task.getAllImages(function(err,rows)){
+    if(err){
+      res.json(err);
+    }else{
+      res.json(rows);
+    }
+  }
+}
+
 router.post('/getTask',function(req,res,next){
  
 if(req.body.id){
