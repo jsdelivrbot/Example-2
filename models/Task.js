@@ -25,7 +25,8 @@ updateTask:function(id,Task,callback){
 },
  
 getAllImages:function(page,callback){
-	return db.query("select * from image limit 3 offset ?*3",[page],callback);
+	var numberpage=parseInt(page)*3;
+	return db.query("select * from image limit 3 offset ?",[numberpage],callback);
 }
 };
 module.exports=Task;
