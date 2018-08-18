@@ -93,6 +93,9 @@ var io = require('socket.io')(server);
 
 io.on('connection',function(socket){
   socket.on('msgtoclient',function(data){
-    io.emit('msgfromclient',data);
+    io.emit('sendfromserver',data)
   });
 });
+
+
+
