@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<!--
+	Snapshot by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+  <head>
+    <title>Snapshot by TEMPLATED</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      $(document).ready(function(){
+      	$('#message').keydown(function(){
+      		if(event.which == 13){
+      			socket.emit('msgtoclient',this.value);
+      			$('#message').val('');
+      		}
+      	});
+      	socket.on('msgfromclient',function(data){
+      		$('#data').val($('#data').val()+data+'\n');
+      	});
+      });
+    </script>
+  </head>
+  <body>
+    <div class="page-wrap">
+
+      <!-- Nav -->
+        <nav id="nav">
+          <ul>
+            <li><a href="/" class="active"><span class="icon fa-home"></span></a></li>
+            <li><a href="/gallery"><span class="icon fa-camera-retro"></span></a></li>
+            <li><a href="/generic"><span class="icon fa-file-text-o"></span></a></li>
+            <li><a href="/chat"><span class="icon fa-commenting"></span></a></li>
+          </ul>
+        </nav>
+
+      <!-- Main -->
+        <section id="main">
+
+          <input type="text" id="message">
+          <textarea rows="10" cols="10" id="data"></textarea>
+            
+        </section>
+    </div>
+
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/jquery.poptrox.min.js"></script>
+      <script src="assets/js/jquery.scrolly.min.js"></script>
+      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <script src="assets/js/main.js"></script>
+
+  </body>
+</html>

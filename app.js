@@ -80,4 +80,8 @@ app.use('/generic',function(req,res){
   res.render('generic');
 });
 
+app.use('/chat',function(req,res){
+  res.render('chat');
+});
+
 module.exports = app;
