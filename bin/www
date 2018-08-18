@@ -92,8 +92,17 @@ function onListening() {
 var io = require('socket.io')(server);
 
 io.on('connection',function(socket){
-  socket.on('msgtoclient',function(data){
-    io.emit('sendfromserver',data)
+  socket.on('msgtoclient1',function(data){
+    io.emit('sendfromserver1',data)
+  });
+  socket.on('msgtoclient2',function(data){
+    io.emit('sendfromserver2',data)
+  });
+  socket.on('msgtoclient3',function(data){
+    io.emit('sendfromserver3',data)
+  });
+  socket.on('msgtoclient4',function(data){
+    io.emit('sendfromserver4',data)
   });
 });
 
