@@ -21,16 +21,16 @@
       			$('#message').val('');
       		}
       	});
-      	socket.on('sendfromclient1',function(data){
+      	socket.on('sendfromserver1',function(data){
       		$('#data').val($('#data').val()+data+'\n');
       	});
-        socket.on('sendfromclient2',function(data){
+        socket.on('sendfromserver2',function(data){
           $('#data').val($('#data').val()+data+'\n');
         });
-        socket.on('sendfromclient3',function(data){
+        socket.on('sendfromserver3',function(data){
           $('#data').val($('#data').val()+data+'\n');
         });
-        socket.on('sendfromclient4',function(data){
+        socket.on('sendfromserver4',function(data){
           $('#data').val($('#data').val()+data+'\n');
         });
       });
