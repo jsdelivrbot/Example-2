@@ -104,6 +104,12 @@ io.on('connection',function(socket){
   socket.on('msgtoclient4',function(data){
     io.emit('sendfromserver4',data)
   });
+  socket.on('connectstate',function(data){
+    io.emit('sendfromserver5',data)
+  });
+  socket.on('disconnectstate',function(data){
+    io.emit('sendfromserver6',data)
+  });
 });
 
 
