@@ -22,10 +22,10 @@
       		}
       	});
       	socket.on('tochat1',function(data){
-      		$('#data').val('(a)\n '+$('#data').val()+data+'\n\n');
+      		$('#data').val($('#data').val()+'\n(a)\n'+data+'\n\n');
       	});
         socket.on('tochat2',function(data){
-          $('#data').val('(b)\n '+$('#data').val()+data+'\n\n');
+          $('#data').val($('#data').val()+'\n(b)\n'+data+'\n\n');
         });
       });
     </script>
