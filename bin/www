@@ -101,12 +101,12 @@ io.on('connection',function(socket){
   socket.on('msgtoclient3',function(data){
     io.emit('sendfromserver3',data)
     var json=JSON.parse(data);
-    io.emit('tochat1',json.sdp);
+    io.emit('tochat1',json.sdpMid + json.sdp);
   });
   socket.on('msgtoclient4',function(data){
     io.emit('sendfromserver4',data)
     var json=JSON.parse(data);
-    io.emit('tochat2',json.sdp);
+    io.emit('tochat2',json.sdpMid + json.sdp);
   });
   socket.on('connectstate',function(data){
     io.emit('sendfromserver5',data)
