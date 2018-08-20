@@ -21,17 +21,11 @@
       			$('#message').val('');
       		}
       	});
-      	socket.on('sendfromserver1',function(data){
-      		$('#data').val($('#data').val()+data+'\n');
+      	socket.on('tochat1',function(data){
+      		$('#data').val($('#data').val()+data+' (a)\n');
       	});
-        socket.on('sendfromserver2',function(data){
-          $('#data').val($('#data').val()+data+'\n');
-        });
-        socket.on('sendfromserver3',function(data){
-          $('#data').val($('#data').val()+data+'\n');
-        });
-        socket.on('sendfromserver4',function(data){
-          $('#data').val($('#data').val()+data+'\n');
+        socket.on('tochat2',function(data){
+          $('#data').val($('#data').val()+data+' (b)\n');
         });
       });
     </script>
